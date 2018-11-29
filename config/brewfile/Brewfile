@@ -1,0 +1,47 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew autoconf
+brew icu4c
+brew libevent
+brew mas
+brew memcached
+brew openssl
+brew pkg-config
+brew postgresql@9.5
+brew rbenv
+brew readline
+brew redis
+brew ruby-build
+brew tig
+brew tmux
+brew tree
+
+tap homebrew/services
+
+tap homebrew/cask
+cask chromedriver
+
+tap caskroom/cask
+
+tap heroku/brew
+brew heroku
+brew heroku-node
+
+tap phrase/brewed
+brew phraseapp
+
+tap rcmdnk/file
+brew brew-file
+
+tap thoughtbot/formulae
+brew rcm
+
+# App Store applications
+appstore 442160987 Flycut (1.5)
+appstore 668208984 GIPHY CAPTURE (4.0)
+appstore Install macOS Mojave (14022)
+appstore 409203825 Numbers (5.1)
+appstore 803453959 Slack (3.1.1)
+appstore 497799835 Xcode (9.3.1)
