@@ -3,10 +3,19 @@
 
 tap homebrew/core
 brew autoconf
+brew fzf
+brew gettext
 brew icu4c
+brew jemalloc
 brew libevent
+brew libtermkey
+brew libuv
+brew libvterm
+brew luajit
 brew mas
 brew memcached
+brew msgpack
+brew neovim
 brew openssl
 brew pkg-config
 brew postgresql@9.5
@@ -17,6 +26,7 @@ brew ruby-build
 brew tig
 brew tmux
 brew tree
+brew unibilium
 
 tap homebrew/services
 
@@ -37,6 +47,9 @@ brew brew-file
 
 tap thoughtbot/formulae
 brew rcm
+
+# Other Cask applications
+cask iterm2
 
 # App Store applications
 appstore 442160987 Flycut (1.5)
