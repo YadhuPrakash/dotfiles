@@ -8,3 +8,7 @@
 	email = yadhu.prakash@procore.com
 [push]
 	default = current
+[commit]
+	verbose = true
+[core]
+	editor = nvim

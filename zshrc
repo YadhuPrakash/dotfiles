@@ -1,8 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/bin:/usr/bin:/usr/local/bin:$HOME/.my_zsh_functions
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/yadhuprakash/.oh-my-zsh"
+
+#export PATH=/usr/local/opt/postgresql@9.6/bin/:$PATH
+
+# Path to all the custom terminal functions (started with PR name creator)
+export FPATH=~/.my_zsh_functions:$FPATH
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -82,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -90,6 +97,8 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+#export PATH=/usr/local/opt/postgresql@9.5/bin/:$PATH
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -109,3 +118,42 @@ fi
 source $HOME/.zshenv
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+# For go!
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+#export PATH=/usr/local/opt/postgresql@9.5/bin/:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PHRASEAPP_TOKEN="58d5ee454b754e90c40a4ad9a7461c1473f3078e378f3b7701ea56f81805b686"
+export CIRCLE_API_TOKEN="6e74f76257d9717ba2a9c93334731638e70ec06a"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+
+
+
+update_master ()
+{
+    git checkout master;
+    git remote prune origin && git pull; 
+    git checkout -;
+}
+
+merge_master()
+{
+    update_master;
+    git merge master;
+}

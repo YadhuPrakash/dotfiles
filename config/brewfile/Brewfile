@@ -2,23 +2,32 @@
 # tap repositories and their packages
 
 tap homebrew/core
+brew ack
 brew autoconf
+brew automake
+brew coreutils
 brew fzf
+brew gdbm
 brew gettext
+brew gist
 brew icu4c
 brew jemalloc
+brew kubernetes-cli
 brew libevent
 brew libtermkey
+brew libtool
 brew libuv
 brew libvterm
+brew libyaml
 brew luajit
 brew mas
 brew memcached
 brew msgpack
 brew neovim
+brew node
+brew nvm
 brew openssl
 brew pkg-config
-brew postgresql@9.5
 brew rbenv
 brew readline
 brew redis
@@ -27,6 +36,7 @@ brew tig
 brew tmux
 brew tree
 brew unibilium
+brew unixodbc
 
 tap homebrew/services
 
