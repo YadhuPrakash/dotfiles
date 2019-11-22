@@ -135,8 +135,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PHRASEAPP_TOKEN="58d5ee454b754e90c40a4ad9a7461c1473f3078e378f3b7701ea56f81805b686"
-export CIRCLE_API_TOKEN="6e74f76257d9717ba2a9c93334731638e70ec06a"
 
 . $HOME/.asdf/asdf.sh
 
@@ -157,3 +155,9 @@ merge_master()
     update_master;
     git merge master;
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yadhuprakash/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yadhuprakash/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yadhuprakash/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yadhuprakash/google-cloud-sdk/completion.zsh.inc'; fi
