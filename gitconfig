@@ -6,9 +6,13 @@
 [user]
 	name = Yadhu Prakash
 	email = yadhu.prakash@procore.com
+	signingkey = 301012C68E6AE67E
 [push]
 	default = current
 [commit]
 	verbose = true
+	gpgsign = true
 [core]
 	editor = nvim
+[gpg]
+	program = gpg

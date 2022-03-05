@@ -5,38 +5,69 @@ tap homebrew/core
 brew ack
 brew autoconf
 brew automake
+brew avro-c
+brew circleci
 brew coreutils
+brew docbook
+brew docbook-xsl
 brew fzf
 brew gdbm
 brew gettext
 brew gist
+brew git-lfs
+brew glib
+brew gnu-getopt
+brew helm
 brew icu4c
+brew jansson
 brew jemalloc
 brew kubernetes-cli
 brew libevent
+brew libffi
+brew librdkafka
+brew libserdes
 brew libtermkey
 brew libtool
 brew libuv
 brew libvterm
 brew libyaml
 brew luajit
+brew lz4
+brew lzlib
 brew mas
+brew maven
 brew memcached
 brew msgpack
+brew ncurses
 brew neovim
 brew node
 brew nvm
-brew openssl
+brew openjdk
+brew openjdk@11
+brew openssl@1.1
+brew pcre
+brew pinentry-mac
 brew pkg-config
+brew python@3.9
 brew rbenv
+brew rcm
 brew readline
 brew redis
 brew ruby-build
+brew shared-mime-info
+brew snappy
+brew sqlite
+brew tcl-tk
 brew tig
 brew tmux
 brew tree
 brew unibilium
 brew unixodbc
+brew utf8proc
+brew xmlto
+brew xz
+brew yajl
+brew zstd
 
 tap homebrew/services
 
@@ -52,11 +83,17 @@ brew heroku-node
 tap phrase/brewed
 brew phraseapp
 
+tap procore/tap
+brew aws-ssh
+
 tap rcmdnk/file
 brew brew-file
 
 tap thoughtbot/formulae
-brew rcm
+
+# Other Homebrew packages
+brew kafkacat
+brew openssl
 
 # Other Cask applications
 cask iterm2

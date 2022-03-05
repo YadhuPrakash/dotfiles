@@ -10,6 +10,8 @@ export ZSH="/Users/yadhuprakash/.oh-my-zsh"
 # Path to all the custom terminal functions (started with PR name creator)
 export FPATH=~/.my_zsh_functions:$FPATH
 
+# Variable used for production access
+export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.github_access_token | tr -d '\n')
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -161,3 +163,57 @@ if [ -f '/Users/yadhuprakash/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ya
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/yadhuprakash/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yadhuprakash/google-cloud-sdk/completion.zsh.inc'; fi
+
+function asdf() {
+  case $1 in
+    "start")
+      case $2 in
+        "es"|"elasticsearch")
+          `asdf which elasticsearch` -p /tmp/elasticsearch-pid -d
+          echo "[STARTED] Elasticsearch `asdf current elasticsearch`"
+          ;;
+        "kibana")
+          nohup `echo $(asdf which kibana) --log-file $(asdf where kibana)/kibana.log` >/dev/null&
+          echo "[STARTED] Kibana `asdf current kibana`"
+          ;;
+        *)
+          echo "Plugin not found. Run \"asdf plugin-list\" to find available plugins."
+          ;;
+      esac
+      ;;
+    "stop")
+      case $2 in
+        "es"|"elasticsearch")
+          kill -SIGTERM $(cat /tmp/elasticsearch-pid | sed 's/%//')
+          echo "[STOPPED] Elasticsearch `asdf current elasticsearch`"
+          ;;
+        "kibana")
+          kill $(ps aux | grep "$(asdf where kibana)" | awk '{print $2}')
+          echo "[STOPPED] Kibana `asdf current kibana`"
+          ;;
+        *)
+          echo "Plugin not found. Run \"asdf plugin-list\" to find available plugins."
+          ;;
+      esac
+      ;;
+    "restart")
+      case $2 in
+        "es"|"elasticsearch")
+          asdf stop elasticsearch
+          asdf start elasticsearch
+          ;;
+        "kibana")
+          asdf stop kibana
+          asdf start kibana
+          ;;
+        *)
+          echo "Plugin not found. Run \"asdf plugin-list\" to find available plugins."
+          ;;
+      esac
+      ;;
+    *)
+      ~/.asdf/bin/asdf "$@"
+      ;;
+  esac
+}
+
